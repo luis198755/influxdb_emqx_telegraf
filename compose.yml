@@ -98,6 +98,15 @@ services:
       emqx:
         condition: service_healthy
     restart: unless-stopped
+  
+  ondicula-wave:
+    build: 
+      context: ./ondicula_wave
+      dockerfile: Dockerfile
+    depends_on:
+      emqx:
+        condition: service_healthy
+    restart: unless-stopped
 
   grafana:
     image: grafana/grafana:11.2.0

@@ -90,6 +90,15 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  gaussian_noise-wave:
+    build: 
+      context: ./gaussian_noise
+      dockerfile: Dockerfile
+    depends_on:
+      emqx:
+        condition: service_healthy
+    restart: unless-stopped
+
   grafana:
     image: grafana/grafana:11.2.0
     ports:

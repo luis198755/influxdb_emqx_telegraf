@@ -30,6 +30,8 @@ services:
       interval: 5s
       timeout: 10s
       retries: 5
+    restart: always
+
 
   telegraf:
     image: telegraf:1.32
@@ -68,7 +70,15 @@ services:
       emqx:
         condition: service_healthy
     restart: unless-stopped
-
+  
+  square-wave:
+    build: 
+      context: ./square_wave
+      dockerfile: Dockerfile
+    depends_on:
+      emqx:
+        condition: service_healthy
+    restart: unless-stopped
 
   grafana:
     image: grafana/grafana:11.2.0

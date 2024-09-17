@@ -43,7 +43,7 @@ func main() {
 
 		//fmt.Printf("Published: %s to topic: %s\n", message, topic)
 
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 		t += 0.1
 	}
 }

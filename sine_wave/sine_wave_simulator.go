@@ -35,7 +35,7 @@ func main() {
 		token := client.Publish(topic, 0, false, message)
 		token.Wait()
 
-		fmt.Printf("Published: %s to topic: %s\n", message, topic)
+		//fmt.Printf("Published: %s to topic: %s\n", message, topic)
 		
 		time.Sleep(1 * time.Second)
 		t += 1.0

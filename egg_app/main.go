@@ -55,6 +55,6 @@ func main() {
 		fmt.Printf("Publicado: %s en el tema: %s\n", message, topic)
 
 		t += 0.01 // Incrementa el tiempo (asumiendo 100 muestras por segundo)
-		time.Sleep(10 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 	}
 }

@@ -108,6 +108,15 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  egg-wave:
+    build: 
+      context: ./egg_app
+      dockerfile: Dockerfile
+    depends_on:
+      emqx:
+        condition: service_healthy
+    restart: unless-stopped
+
   grafana:
     image: grafana/grafana:11.2.0
     ports:
